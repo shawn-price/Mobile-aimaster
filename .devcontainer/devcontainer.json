@@ -1,0 +1,20 @@
+{
+  "name": "Hermes-Mobile-Agent-Env",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/redis:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install fastapi uvicorn crewai langgraph sqlite3",
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/workspaces/data,type=bind"
+  ]
+}
